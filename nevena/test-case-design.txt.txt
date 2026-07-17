@@ -1,0 +1,94 @@
+This document defines and prioritizes test cases for the TodoListMe application.
+
+Test cases are grouped into four tiers based on business value and automation cost. The prioritization focuses on covering the core user journey first (task creation and completion), followed by supporting functionality and advanced features.
+
+Tier 1 covers the critical task lifecycle and represents the core functionality of the system.
+Tier 2 includes supporting features that enhance usability and organization.
+Tier 3 contains advanced interactions with higher automation complexity.
+Tier 4 includes low-value features that are not critical for core application behavior.
+
+This prioritization ensures maximum test coverage of business-critical functionality while maintaining a cost-effective automation strategy.
+
+
+
+
+TIER 1 - CORE FUNCTIONALITY
+
+TC001 User can add task to todo list - after the user enters some term into the input field with the placeholder ‘Type and hit Enter to add’, and hits the Enter, a new Item will be created. 
+
+TC002 User can complete existing task - after the user clicks the checkbox in front of the task item, task will be moved from "To do" to "Done" section. 
+
+// The two highest-priority test cases focus on the core lifecycle of a task: creation and status transition.This ensures that the fundamental unit of the application behaves correctly from creation to completion, which represents the primary user interaction with the system. 
+// Both test cases are also low-cost to automate.
+
+
+
+
+TIER 2 - SUPPORTING FUNCTIONALITY
+
+TC003 Create new list - Clicking ‘Add new list’ should create a new list visible in the sidebar - after user clicks ‘Add new list’ button, and saves it by clicking ‘Save’ button, a new list will be displayed within the existing list.
+// Value: High - enables organization.
+// Although highly valuable for organizing data, this test case is ranked below task lifecycle tests, as the application still provides usable default lists.
+// Automation cost: Low
+
+TC004 Delete task - Deleting a task by clicking x button - ‘Delete Item’ button, should permanently delete the task from the list and this changes should remain consistent on page refresh. 
+// Value : High
+// Automation cost: Low
+
+TC005 Rename list - Editing list name should update it in the sidebar - on double-click within the existing list, user is able to edit the name of the list and to save the changes.
+// Value: Medium
+// Automation cost: Low
+
+TC006 Copying list - Hovering the list will enable ‘copy’ button - after clicking ‘copy’ button, a new list with the name ‘Copy of …’ will be displayed and saved after confirming by clicking ‘Save’ button
+// Value - Low
+// Automation cost: Medium
+
+
+
+
+TIER 3 - ADVANCED FUNCTIONALITY 
+
+TC007 Changing the task’s status from Done to ToDo - user should be able to change the task’s status, by clicking the checkbox - unchecking it. The task will be moved to ‘To do’ section 
+// Value - Medium
+// Automation cost - Low
+
+TC008 Drag task to ‘Tomorrow’ - Dragging and dropping a task to ‘Tomorrow’ should move the task accordingly
+// Value - Medium
+// Automation cost - High - drag & drop
+
+TC009 Drag task to ‘Later’ - Dragging and dropping a task to ‘Later’ should prompt for date and move the task accordingly.
+// Value: Medium
+// Cost: High - drag & drop + date picker  
+
+TC010 Reordering the tasks - Dragging and dropping a task should change its position within the list, updating the order immediately in the UI. The new order should be preserved after the action is completed and remain consistent on page refresh. 
+// Value - Medium
+// Automation cost: High
+
+TC011 Correct counting - the number of tasks within the specific list should match the sum of the numbers displayed in brackets next to ‘List’s name in ‘Lists’ section
+// Value - High business value (data accuracy)
+// Automation cost: Medium
+
+TC012 Correct counting regarding ‘Tomorrow’ and ‘Later’ tasks - The number within bracket next to the ‘Tomorrow’ and ‘Later’ text labels, should match the number of the tasks displayed within these sections 
+// Value - High business value (data accuracy)
+// Automation cost: Medium
+
+TC013 Remove all ‘Done’ tasks -  user is able to remove all done tasks at once by clicking ‘Purge’ button
+// Value - Medium
+// Automation cost: Low
+
+TC014 Sorting - User is able to sort items within the list, by choosing specific sorting criteria after clicking ‘Sort’ button
+// Value - Low
+// Automation cost: High
+
+
+
+
+TIER 4 - LOW VALUE
+
+TC015 Printing - Clicking ‘Print’ button should open print dialog 
+// Value: Low
+// Automation cost: High
+
+TC016 - Info dialog visibility - By hovering ‘i’ button - info dialog will open with the main instructions 
+// Value: Low
+// Automation cost: High
